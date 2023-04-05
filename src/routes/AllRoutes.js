@@ -3,7 +3,7 @@ import { FilmList, FilmDetail, Search, PageNotFound } from "../pages";
 
 export const AllRoutes = () => {
   return (
-    <div>
+    <div className="dark:bg-slate-800">
       <Routes>
         <Route path="/" element={<FilmList />} />
         <Route path="film/:id" element={<FilmDetail />} />
