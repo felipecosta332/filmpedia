@@ -32,10 +32,10 @@ export const Header = () => {
 
   return (
     <header>
-      <nav className="bg-white border-b-2 border-gray-200 px-2 sm:px-4 py-2.5  dark:bg-gray-900 dark:border-b-1 dark:border-gray-900">
+      <nav className="bg-white border-b-2 border-gray-200 px-2 sm:px-4 py-2  dark:bg-gray-900 dark:border-b-1 dark:border-gray-900">
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <Link to="/" className="flex items-center">
-            <img src={Logo} className="h-6 mr-3 sm:h-9" alt="Filmpedia Logo" />
+            <img src={Logo} className="h-6 mr-2 sm:h-9" alt="Filmpedia Logo" />
             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
               Filmpedia
             </span>
