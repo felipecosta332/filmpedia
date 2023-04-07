@@ -36,6 +36,13 @@ export const FilmDetail = () => {
     } else if (value >= million) {
       let result = value / million;
       return `$${Math.round(result)} million`;
+    } else if (
+      value === null ||
+      value === undefined ||
+      value === NaN ||
+      value === 0
+    ) {
+      return "Data not found.";
     } else {
       return `$${value}`;
     }
