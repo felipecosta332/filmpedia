@@ -48,6 +48,66 @@ export const FilmDetail = () => {
     }
   };
 
+  const getMonthToString = (month) => {
+    switch (month) {
+      case 1:
+        return "January";
+      case 2:
+        return "February";
+      case 3:
+        return "March";
+      case 4:
+        return "April";
+      case 5:
+        return "May";
+      case 6:
+        return "June";
+      case 7:
+        return "July";
+      case 8:
+        return "August";
+      case 9:
+        return "September";
+      case 10:
+        return "October";
+      case 11:
+        return "November";
+      case 12:
+        return "December";
+      default:
+        return "";
+    }
+  };
+
+  const formatDateToOrdinal = (date) => {
+    let firstDigit = date % 10;
+    let secondDigit = Math.floor(date / 10);
+    if (secondDigit !== 1) {
+      switch (firstDigit) {
+        case 1:
+          return `${date}st`;
+        case 2:
+          return `${date}nd`;
+        case 3:
+          return `${date}rd`;
+      }
+    }
+    return `${date}th`;
+  };
+
+  const formatDateValue = (data) => {
+    if (data === null || data === undefined) {
+      return "Data not found.";
+    } else {
+      let date = data.split("-");
+      let month = getMonthToString(Number(date[1]));
+      let year = date[0];
+      let ordinal = formatDateToOrdinal(Number(date[2]));
+      let result = `${month} ${ordinal}, ${year} (${data.replace(/-/g, "/")})`;
+      return result;
+    }
+  };
+
   return (
     <main>
       <section className="flex justify-around flex-wrap py-5">
@@ -108,7 +168,7 @@ export const FilmDetail = () => {
           </p>
           <p className="my-4">
             <span className="mr-2 font-bold">Release Date:</span>
-            <span>{film.release_date}</span>
+            <span>{formatDateValue(film.release_date)}</span>
           </p>
           <p className="my-4">
             <span className="mr-2 font-bold">IMDB Code:</span>
