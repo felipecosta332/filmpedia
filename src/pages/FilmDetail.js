@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Backup from "../assets/images/backup.png";
+import { useTitle } from "../hooks/useTitle";
 
 export const FilmDetail = () => {
   const params = useParams();
@@ -21,6 +22,8 @@ export const FilmDetail = () => {
     }
     fetchFilm();
   }, []);
+
+  useTitle(film.title);
 
   const formatCurrencyValue = (value) => {
     const billion = 1000000000;
