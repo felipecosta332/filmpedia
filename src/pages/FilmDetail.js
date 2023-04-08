@@ -179,7 +179,7 @@ export const FilmDetail = () => {
               target="_blank"
               rel="noreferrer"
             >
-              (<span className="underline">IMDB link</span>)
+              (<span className="hover:underline">IMDB link</span>)
             </a>
           </p>
         </div>
